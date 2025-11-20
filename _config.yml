@@ -1,0 +1,19 @@
+# Jekyll configuration for GitHub Pages
+name: Leading Powerful Conversations
+description: Transform your leadership through powerful conversations
+url: ""
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+theme: null
+
+# Exclude from processing
+exclude:
+  - README.md
+  - .git
+  - .gitignore
+
+# Include static files
+include:
+  - _config.yml
