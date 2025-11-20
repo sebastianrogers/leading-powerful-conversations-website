@@ -40,6 +40,17 @@ To customize the website:
 2. Modify colors and styles in `css/style.css`
 3. Update the contact form action URL in `contact.html` with your own form service
 
+## Contact Form Setup
+
+The contact form uses [Formspree](https://formspree.io/) to handle form submissions and send emails to sebastian@crazybearandraggedstaff.com.
+
+**First-time setup:**
+1. When the first form submission is made, Formspree will send a confirmation email to sebastian@crazybearandraggedstaff.com
+2. Click the confirmation link in that email to activate the form
+3. After activation, all future form submissions will be forwarded to that email address
+
+No additional configuration or API keys are required for basic functionality.
+
 ## Features
 
 - Responsive design that works on mobile, tablet, and desktop
