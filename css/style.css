@@ -6,17 +6,30 @@
 }
 
 :root {
-    --primary-color: #2c3e50;
+    --primary-color: #ffffff;
     --secondary-color: #3498db;
-    --accent-color: #e74c3c;
+    --accent-color: #f3cb2e;
     --text-color: #333;
     --light-bg: #f8f9fa;
     --white: #ffffff;
     --border-color: #ddd;
+    --primary-font: 'Lpc-body', Arial, sans-serif;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: Lpc-head,
+        -apple-system,
+        BlinkMacSystemFont,
+        segoe ui,
+        Roboto,
+        helvetica neue,
+        Arial,
+        noto sans,
+        sans-serif,
+        apple color emoji,
+        segoe ui emoji,
+        segoe ui symbol,
+        noto color emoji;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
@@ -31,8 +44,9 @@ body {
 /* Header and Navigation */
 header {
     background-color: var(--primary-color);
-    color: var(--white);
+    color: var(--text-color);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-family: Lpc-head;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -49,18 +63,26 @@ header {
 }
 
 .logo h1 {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 3rem;
+    font-weight: 500;
+    letter-spacing: -2px;
+    text-align: center;
+}
+
+.accent-text {
+    color: var(--accent-color);
+    font-weight: 700;
 }
 
 .nav-menu {
     display: flex;
+    font-size: 1.5rem;
     list-style: none;
     gap: 2rem;
 }
 
 .nav-menu a {
-    color: var(--white);
+    color: var(--text-color);
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
@@ -73,9 +95,9 @@ header {
 
 /* Hero Section */
 .hero {
-    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: var(--white);
-    padding: 6rem 0;
+    font-family: var(--primary-font);
+    font-weight: 500;
+    padding: 2rem 0;
     text-align: center;
 }
 
@@ -372,7 +394,7 @@ footer p {
 
 @media (max-width: 480px) {
     .logo h1 {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
     }
     
     .hero h2 {
