@@ -24,6 +24,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       
+      - name: Verify site directory
+        run: |
+          echo "Contents of ./site directory:"
+          ls -la ./site/
+          echo "index.html preview:"
+          head -20 ./site/index.html
+      
       - name: Setup Pages
         uses: actions/configure-pages@v4
       
