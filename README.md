@@ -4,39 +4,45 @@ A static website for "Leading Powerful Conversations" - a leadership coaching an
 
 ## GitHub Pages Deployment
 
-This website is optimized for GitHub Pages hosting with automatic deployment. To set up:
+This website is optimized for GitHub Pages hosting with automatic deployment using GitHub Actions. To set up:
 
 1. **Repository Setup**: Ensure your repository is public (or have GitHub Pro for private repos)
 2. **Access Settings**: Go to your repository settings on GitHub
 3. **Pages Configuration**: Navigate to the "Pages" section in the left sidebar
 4. **Source Selection**:
-   - Select "Deploy from a branch" as source
-   - Choose the `main` branch (recommended)
-   - Select the root directory `/` as the folder
-5. **Save & Deploy**: Click "Save" - GitHub will automatically build and deploy your site
+   - Select "GitHub Actions" as the source
+   - The workflow will automatically deploy from the `site/` folder
+5. **Automatic Deployment**: Push changes to the `main` branch to trigger deployment
 6. **Access Your Site**: Your site will be available at `https://[username].github.io/[repository-name]`
-7. **Custom Domain** (Optional): Add a CNAME file to use a custom domain
+7. **Custom Domain** (Optional): Add a CNAME file to the `site/` folder to use a custom domain
 
-**Note**: Deployment typically takes 5-10 minutes. Check the Actions tab for build status.
+**Note**: Deployment typically takes 2-5 minutes. Check the Actions tab for build status.
 
 ## Website Structure
 
-- `index.html` - Home page
-- `bio.html` - Biography/About page
-- `contact.html` - Contact page
-- `resources.html` - Resources page
-- `404.html` - Custom error page
-- `css/style.css` - Main stylesheet
-- `robots.txt` - Search engine crawler instructions
-- `sitemap.xml` - Site structure for search engines
-- `images/` - Image assets directory
+All website files are located in the `site/` directory:
+
+- `site/index.html` - Home page
+- `site/bio.html` - Biography/About page
+- `site/contact.html` - Contact page
+- `site/resources.html` - Resources page
+- `site/404.html` - Custom error page
+- `site/css/style.css` - Main stylesheet
+- `site/robots.txt` - Search engine crawler instructions
+- `site/sitemap.xml` - Site structure for search engines
+- `site/images/` - Image assets directory
 
 ## Local Development
 
-To view the site locally, you can:
+To view the site locally:
 
-1. Open `index.html` directly in your browser, or
-2. Use a local web server:
+1. Navigate to the site directory:
+
+   ```bash
+   cd site
+   ```
+
+2. Start a local web server:
 
    ```bash
    python3 -m http.server 8000
@@ -48,9 +54,10 @@ To view the site locally, you can:
 
 To customize the website:
 
-1. Update the HTML content in each `.html` file
-2. Modify colors and styles in `css/style.css`
-3. Update the contact form action URL in `contact.html` with your own form service
+1. Update the HTML content in each `.html` file in the `site/` directory
+2. Modify colors and styles in `site/css/style.css`
+3. Update the contact form action URL in `site/contact.html` with your own form service
+4. Add new images to `site/images/` directory
 
 ## Contact Form Setup
 
@@ -74,7 +81,7 @@ No additional configuration or API keys are required for basic functionality.
 - **Contact Integration**: Pre-configured Formspree contact form
 - **Error Handling**: Custom 404 page for better user experience
 - **Zero Dependencies**: No build process, frameworks, or external libraries required
-- **GitHub Pages Ready**: Instant deployment with version control integration
+- **GitHub Pages Ready**: Automated deployment with GitHub Actions from `site/` folder
 - **Accessibility Focused**: Semantic markup and keyboard navigation support
 
 ## License
