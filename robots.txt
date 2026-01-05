@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://sebastianrogers.github.io/leading-powerful-conversations-website/sitemap.xml
