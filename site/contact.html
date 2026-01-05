@@ -47,7 +47,7 @@
           through Christian coaching. Let's work together to create meaningful, life-changing conversations in your groups.
         </p>
       </section>
-      <form action="#" method="post" aria-label="Contact form">
+      <form action="#" method="post" aria-label="Contact form" onsubmit="sendEmail(event)" id="contact-form" style="display: none">
         <fieldset>
           <legend>Contact Information</legend>
 
@@ -77,6 +77,36 @@
           <button type="submit">Send Message</button>
         </fieldset>
       </form>
+
+      <script>
+        // Show the form only if JavaScript is enabled
+        document.getElementById("contact-form").style.display = "block";
+
+        function sendEmail(event) {
+          event.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const subject = document.getElementById("subject").value;
+          const message = document.getElementById("message").value;
+
+          const emailBody = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0AMessage:%0D%0A${encodeURIComponent(message)}`;
+          const mailtoLink = `mailto:sebastian@crazybearandraggedstaff.com?subject=${encodeURIComponent(subject)}&body=${emailBody}`;
+
+          window.location.href = mailtoLink;
+        }
+      </script>
+
+      <noscript>
+        <div class="noscript-fallback">
+          <p><strong>JavaScript is disabled in your browser.</strong> Please use the link below to send us an email directly:</p>
+          <p>
+            <a href="mailto:sebastian@crazybearandraggedstaff.com?subject=Contact%20from%20Leading%20Powerful%20Conversations%20Website" class="email-link">
+              📧 Send Email to sebastian@crazybearandraggedstaff.com
+            </a>
+          </p>
+        </div>
+      </noscript>
     </main>
 
     <footer>
