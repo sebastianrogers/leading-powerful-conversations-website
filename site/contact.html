@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Contact us to start your journey toward powerful conversations" />
     <title>Contact - Leading Powerful Conversations</title>
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
@@ -20,60 +21,62 @@
     </header>
 
     <main>
-      <section>
-        <h2>Get in Touch</h2>
-        <p>Let's start a conversation about your leadership journey</p>
-      </section>
+      <h2>Contact Us</h2>
 
       <section>
-        <div>
-          <h3>Connect With Us</h3>
-          <p>We'd love to hear from you. Whether you're interested in coaching, workshops, or have questions about our services, please reach out.</p>
+        <p>
+          Whether you have a question about Leading Powerful Conversations, need support with Christian coaching, or want to learn more about how to implement
+          the 5-step framework in your Bible study, life group, or church group, we're here to help!
+        </p>
+        <p>
+          This is your space to connect, ask questions, and get the support you need to guide powerful Christian education and spirituality-driven
+          conversations. We value your journey and are excited to assist you in creating impactful, Spirit-led discussions.
+        </p>
+        <p>Feel free to reach out if:</p>
+        <ul>
+          <li>You're interested in group discounts or bulk orders for church groups or Christian coaching sessions</li>
+          <li>You'd like to book a workshop or speaking engagement for small group leaders</li>
+          <li>You have feedback, success stories, or testimonials to share about how the book is helping your group thrive</li>
+          <li>You're having trouble accessing our downloadable resources</li>
+          <li>You just want to connect with us or ask for advice on facilitating Christian conversations</li>
+        </ul>
+        <p>📩 Simply fill out the form below, and I'll get back to you as soon as possible.</p>
+        <p>
+          We're excited to support you in your leadership journey, whether you're nurturing spiritual growth, facilitating Bible studies, or empowering others
+          through Christian coaching. Let's work together to create meaningful, life-changing conversations in your groups.
+        </p>
+      </section>
+      <form>
+        <fieldset>
+          <legend>Contact Information</legend>
 
           <div>
-            <div>
-              <h4>Email</h4>
-              <p><a href="mailto:info@leadingpowerfulconversations.com">info@leadingpowerfulconversations.com</a></p>
-            </div>
-
-            <div>
-              <h4>Schedule a Call</h4>
-              <p>Ready to transform your conversations? Schedule a complimentary discovery call to explore how we can support your leadership development.</p>
-            </div>
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required />
           </div>
-        </div>
 
-        <div>
-          <h3>Send Us a Message</h3>
-          <form action="https://formspree.io/sebastian@crazybearandraggedstaff.com" method="POST">
-            <div>
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required />
-            </div>
+          <div'>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required />
+          </div>
 
-            <div>
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required />
-            </div>
+          <div>
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required />
+          </div>
 
-            <div>
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" required />
-            </div>
+          <div>
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
 
-            <div>
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-
-            <button type="submit">Send Message</button>
-          </form>
-        </div>
-      </section>
+          <button type="submit">Send Message</button>
+        </fieldset>
+      </form>
     </main>
 
     <footer>
-      <div class="license-info">
+      <div>
         <p>&copy; 2026 Stephen Ellis. All rights reserved.</p>
         <p>
           Website content licensed under
