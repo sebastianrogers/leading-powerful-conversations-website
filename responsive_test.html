@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Design Testing - Leading Powerful Conversations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        
+        h1 {
+            color: #1a4480;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .device-frame {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .device-frame::before {
+            content: attr(data-device);
+            display: block;
+            background: #1a4480;
+            color: white;
+            padding: 8px 15px;
+            font-weight: bold;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .device-screen {
+            background: white;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        iframe {
+            width: 100%;
+            border: none;
+            display: block;
+            transform-origin: top left;
+        }
+        
+        /* Mobile Device (iPhone 12/13) */
+        .mobile .device-screen {
+            width: 390px;
+            height: 600px;
+        }
+        .mobile iframe {
+            width: 390px;
+            height: 600px;
+            transform: scale(0.8);
+        }
+        
+        /* Tablet Device (iPad) */
+        .tablet .device-screen {
+            width: 768px;
+            height: 500px;
+        }
+        .tablet iframe {
+            width: 768px;
+            height: 500px;
+            transform: scale(0.7);
+        }
+        
+        /* Desktop Device */
+        .desktop .device-screen {
+            width: 1200px;
+            height: 600px;
+        }
+        .desktop iframe {
+            width: 1200px;
+            height: 600px;
+            transform: scale(0.6);
+        }
+        
+        /* Large Desktop */
+        .desktop-large .device-screen {
+            width: 1920px;
+            height: 700px;
+        }
+        .desktop-large iframe {
+            width: 1920px;
+            height: 700px;
+            transform: scale(0.4);
+        }
+        
+        .controls {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .control-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        label {
+            font-weight: bold;
+            color: #1a4480;
+        }
+        
+        select, input[type="url"] {
+            padding: 8px 12px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        button {
+            background: #1a4480;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        
+        button:hover {
+            background: #123456;
+        }
+        
+        .checklist {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        
+        .checklist h3 {
+            color: #1a4480;
+            margin-bottom: 15px;
+        }
+        
+        .checklist-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.2s ease;
+        }
+        
+        .checklist-item:hover {
+            background: #f0f8ff;
+        }
+        
+        .checklist-item input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+        
+        .device-specs {
+            margin-top: 15px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .responsive-notes {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        
+        .responsive-notes h3 {
+            color: #856404;
+            margin-bottom: 10px;
+        }
+        
+        .responsive-notes ul {
+            margin-left: 20px;
+        }
+        
+        .responsive-notes li {
+            margin-bottom: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .test-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .device-frame {
+                margin-bottom: 20px;
+            }
+            
+            .mobile .device-screen,
+            .tablet .device-screen,
+            .desktop .device-screen,
+            .desktop-large .device-screen {
+                width: 100%;
+                height: 400px;
+            }
+            
+            .mobile iframe,
+            .tablet iframe,
+            .desktop iframe,
+            .desktop-large iframe {
+                width: 100%;
+                height: 400px;
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>📱 Responsive Design Testing Suite</h1>
+    
+    <div class="controls">
+        <div class="control-group">
+            <label for="page-select">Test Page:</label>
+            <select id="page-select">
+                <option value="index.html">Home Page</option>
+                <option value="bio.html">Bio Page</option>
+                <option value="resources.html">Resources Page</option>
+                <option value="contact.html">Contact Page</option>
+            </select>
+            
+            <label for="custom-url">Or Custom URL:</label>
+            <input type="url" id="custom-url" placeholder="https://example.com">
+            
+            <button onclick="updateFrames()">🔄 Update All Frames</button>
+            <button onclick="openDevTools()">🛠️ Open Browser DevTools</button>
+        </div>
+    </div>
+    
+    <div class="test-grid">
+        <div class="device-frame mobile" data-device="📱 Mobile (390x844)">
+            <div class="device-screen">
+                <iframe src="site/index.html" id="mobile-frame" title="Mobile view"></iframe>
+            </div>
+            <div class="device-specs">
+                <strong>iPhone 12/13 Pro:</strong> 390×844 px<br>
+                <strong>Viewport:</strong> Mobile-first responsive design<br>
+                <strong>Touch targets:</strong> Minimum 44×44 px
+            </div>
+        </div>
+        
+        <div class="device-frame tablet" data-device="📱 Tablet (768x1024)">
+            <div class="device-screen">
+                <iframe src="site/index.html" id="tablet-frame" title="Tablet view"></iframe>
+            </div>
+            <div class="device-specs">
+                <strong>iPad:</strong> 768×1024 px<br>
+                <strong>Viewport:</strong> Medium breakpoint<br>
+                <strong>Layout:</strong> Hybrid mobile/desktop patterns
+            </div>
+        </div>
+        
+        <div class="device-frame desktop" data-device="💻 Desktop (1200x800)">
+            <div class="device-screen">
+                <iframe src="site/index.html" id="desktop-frame" title="Desktop view"></iframe>
+            </div>
+            <div class="device-specs">
+                <strong>Desktop:</strong> 1200×800 px<br>
+                <strong>Viewport:</strong> Standard desktop breakpoint<br>
+                <strong>Layout:</strong> Full desktop experience
+            </div>
+        </div>
+        
+        <div class="device-frame desktop-large" data-device="🖥️ Large Desktop (1920x1080)">
+            <div class="device-screen">
+                <iframe src="site/index.html" id="desktop-large-frame" title="Large desktop view"></iframe>
+            </div>
+            <div class="device-specs">
+                <strong>Large Desktop:</strong> 1920×1080 px<br>
+                <strong>Viewport:</strong> Large screen optimization<br>
+                <strong>Layout:</strong> Maximum content width
+            </div>
+        </div>
+    </div>
+    
+    <div class="checklist">
+        <h3>📋 Responsive Design Checklist</h3>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="check1">
+            <label for="check1">Navigation menu adapts properly on mobile (hamburger menu or vertical layout)</label>
+        </div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="check2">
+            <label for="check2">Text remains readable at all screen sizes (minimum 16px font size)</label>
+        </div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="check3">
+            <label for="check3">Images scale appropriately and don't overflow containers</label>
+        </div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="check4">
+            <label for="check4">Touch targets are at least 44×44 pixels on mobile devices</label>
+        </div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="check5">
+            <label for="check5">Content flows naturally without horizontal scrolling</label>
+        </div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="check6">
+            <label for="check6">Forms are usable on mobile (proper input types, sizing)</label>
+        </div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="check7">
+            <label for="check7">Line length is optimal (45-75 characters per line)</label>
+        </div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="check8">
+            <label for="check8">Header/navigation remains accessible across all devices</label>
+        </div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="check9">
+            <label for="check9">Footer content adapts to different screen sizes</label>
+        </div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="check10">
+            <label for="check10">Page load performance is acceptable on mobile networks</label>
+        </div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="check11">
+            <label for="check11">All interactive elements work with touch and mouse input</label>
+        </div>
+        
+        <div class="checklist-item">
+            <input type="checkbox" id="check12">
+            <label for="check12">Content hierarchy is maintained across all breakpoints</label>
+        </div>
+    </div>
+    
+    <div class="responsive-notes">
+        <h3>🎯 Key Responsive Design Principles</h3>
+        <ul>
+            <li><strong>Mobile-First Approach:</strong> Design for the smallest screen first, then enhance for larger screens</li>
+            <li><strong>Flexible Grids:</strong> Use percentage-based widths and CSS Grid/Flexbox for layout</li>
+            <li><strong>Scalable Images:</strong> Implement max-width: 100% and height: auto for responsive images</li>
+            <li><strong>Touch-Friendly Design:</strong> Ensure buttons and links are large enough for finger interaction</li>
+            <li><strong>Performance Optimization:</strong> Optimize images and consider loading strategies for mobile</li>
+            <li><strong>Progressive Enhancement:</strong> Ensure core functionality works on all devices</li>
+        </ul>
+    </div>
+    
+    <script>
+        function updateFrames() {
+            const selectedPage = document.getElementById('page-select').value;
+            const customUrl = document.getElementById('custom-url').value;
+            const url = customUrl || `site/${selectedPage}`;
+            
+            const frames = ['mobile-frame', 'tablet-frame', 'desktop-frame', 'desktop-large-frame'];
+            frames.forEach(frameId => {
+                document.getElementById(frameId).src = url;
+            });
+        }
+        
+        function openDevTools() {
+            alert('To open Browser DevTools:\n\n' +
+                  '1. Right-click on any frame and select "Inspect Element"\n' +
+                  '2. Use F12 key or Ctrl+Shift+I (Cmd+Option+I on Mac)\n' +
+                  '3. In DevTools, click the device toggle button (📱) to test responsive design\n' +
+                  '4. Select different device presets or create custom viewport sizes');
+        }
+        
+        // Auto-save checklist state
+        document.addEventListener('change', function(e) {
+            if (e.target.type === 'checkbox') {
+                localStorage.setItem(e.target.id, e.target.checked);
+            }
+        });
+        
+        // Restore checklist state on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                const saved = localStorage.getItem(checkbox.id);
+                if (saved === 'true') {
+                    checkbox.checked = true;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

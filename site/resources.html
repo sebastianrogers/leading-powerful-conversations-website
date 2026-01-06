@@ -20,6 +20,11 @@
     <header>
       <nav role="navigation" aria-label="Main navigation">
         <h1>Leading Powerful Conversations</h1>
+        <button class="nav-toggle" aria-label="Toggle mobile navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <ul role="menubar">
           <li role="none"><a href="index.html" role="menuitem">Home</a></li>
           <li role="none"><a href="bio.html" role="menuitem">Bio</a></li>
@@ -70,5 +75,44 @@
         <p>Book content and materials: All rights reserved. Unauthorized reproduction prohibited.</p>
       </div>
     </footer>
+    <script>
+      // Mobile navigation toggle functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const navToggle = document.querySelector(".nav-toggle");
+        const navMenu = document.querySelector('nav ul[role="menubar"]');
+
+        if (navToggle && navMenu) {
+          navToggle.addEventListener("click", function () {
+            const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
+
+            navToggle.setAttribute("aria-expanded", !isExpanded);
+            navToggle.classList.toggle("active");
+            navMenu.classList.toggle("active");
+
+            document.body.style.overflow = !isExpanded ? "hidden" : "auto";
+          });
+
+          const navLinks = navMenu.querySelectorAll("a");
+          navLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+              navToggle.setAttribute("aria-expanded", "false");
+              navToggle.classList.remove("active");
+              navMenu.classList.remove("active");
+              document.body.style.overflow = "auto";
+            });
+          });
+
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && navMenu.classList.contains("active")) {
+              navToggle.setAttribute("aria-expanded", "false");
+              navToggle.classList.remove("active");
+              navMenu.classList.remove("active");
+              document.body.style.overflow = "auto";
+              navToggle.focus();
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
