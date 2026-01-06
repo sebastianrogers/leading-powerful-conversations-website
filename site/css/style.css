@@ -39,7 +39,7 @@ body {
    ========================================================================== */
 
 header {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: rgb(243, 203, 46);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
@@ -53,7 +53,7 @@ nav {
 }
 
 nav h1 {
-  color: #fff;
+  color: #000;
   font-size: 1.5rem;
   font-weight: 600;
   padding: 1rem 0 0.5rem;
@@ -74,7 +74,7 @@ nav ul[role="menubar"] li {
 
 nav ul[role="menubar"] a {
   display: block;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(0, 0, 0, 0.8);
   text-decoration: none;
   padding: 0.75rem 1.25rem;
   font-weight: 500;
@@ -86,18 +86,18 @@ nav ul[role="menubar"] a {
 
 nav ul[role="menubar"] a:hover,
 nav ul[role="menubar"] a:focus {
-  background: rgba(255, 255, 255, 0.15);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
+  color: #000;
   outline: none;
 }
 
 nav ul[role="menubar"] a:focus {
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.3);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
 nav ul[role="menubar"] a[aria-current="page"] {
-  background: rgba(255, 255, 255, 0.25);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.15);
+  color: #000;
   font-weight: 600;
 }
 
@@ -116,8 +116,8 @@ main {
    ========================================================================== */
 
 footer {
-  background: #2d3748;
-  color: rgba(255, 255, 255, 0.8);
+  background: rgb(243, 203, 46);
+  color: rgba(0, 0, 0, 0.85);
   padding: 2rem 20px;
   margin-top: 4rem;
 }
@@ -130,7 +130,7 @@ footer .license-info {
 }
 
 footer a {
-  color: #9ae6b4;
+  color: #1a5490;
   text-decoration: none;
 }
 
