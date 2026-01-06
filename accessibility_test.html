@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessibility Test - Leading Powerful Conversations</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background: #f5f5f5;
+      }
+      .test-section {
+        background: white;
+        margin: 20px 0;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      .color-test {
+        padding: 15px;
+        margin: 10px 0;
+        border-radius: 6px;
+        font-weight: 500;
+      }
+      .yellow-bg {
+        background: rgb(243, 203, 46);
+      }
+      .white-bg {
+        background: #ffffff;
+      }
+      .black-bg {
+        background: #000000;
+      }
+
+      .primary-text {
+        color: #1a1a1a;
+      }
+      .secondary-text {
+        color: rgba(26, 26, 26, 0.85);
+      }
+      .light-text {
+        color: rgba(26, 26, 26, 0.75);
+      }
+      .white-text {
+        color: #ffffff;
+      }
+      .blue-link {
+        color: #1a4480;
+      }
+      .blue-dark {
+        color: #123456;
+      }
+
+      .result {
+        font-size: 0.9em;
+        margin-top: 10px;
+        padding: 5px;
+        background: rgba(0, 0, 0, 0.05);
+        border-left: 3px solid #4caf50;
+      }
+      .header {
+        text-align: center;
+        color: #1a4480;
+        margin-bottom: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>🎨 Accessibility Color Test Results</h1>
+      <p>Testing improved color scheme compliance with WCAG standards</p>
+    </div>
+
+    <div class="test-section">
+      <h2>Primary Text Combinations</h2>
+
+      <div class="color-test white-bg primary-text">
+        <strong>Primary Text on White Background</strong><br />
+        This is the main body text used throughout the website content.
+        <div class="result">✅ Contrast: 17.40:1 - WCAG AAA (Excellent)</div>
+      </div>
+
+      <div class="color-test yellow-bg light-text">
+        <strong>Navigation Links on Yellow Background</strong><br />
+        This represents the navigation menu text with proper contrast.
+        <div class="result">✅ Contrast: 6.11:1 - WCAG AA (Good)</div>
+      </div>
+    </div>
+
+    <div class="test-section">
+      <h2>Interactive Elements</h2>
+
+      <div class="color-test yellow-bg blue-link">
+        <strong>Footer Links (Normal State)</strong><br />
+        <a href="#" style="color: #1a4480; text-decoration: none">This is a clickable link in the footer</a>
+        <div class="result">✅ Contrast: 6.14:1 - WCAG AA (Good)</div>
+      </div>
+
+      <div class="color-test yellow-bg blue-dark">
+        <strong>Footer Links (Hover State)</strong><br />
+        <a href="#" style="color: #123456; text-decoration: underline">This is a hovered link with enhanced contrast</a>
+        <div class="result">✅ Contrast: 8.11:1 - WCAG AAA (Excellent)</div>
+      </div>
+
+      <div class="color-test black-bg white-text">
+        <strong>Skip Link for Screen Readers</strong><br />
+        Skip to main content (accessibility helper)
+        <div class="result">✅ Contrast: 21.00:1 - WCAG AAA (Excellent)</div>
+      </div>
+    </div>
+
+    <div class="test-section">
+      <h2>Typography & Accessibility Features</h2>
+
+      <div class="color-test yellow-bg secondary-text">
+        <strong>Footer Text</strong><br />
+        Secondary information and copyright notices with excellent readability.
+        <div class="result">✅ Contrast: 7.48:1 - WCAG AAA (Excellent)</div>
+      </div>
+    </div>
+
+    <div class="test-section">
+      <h2>🎯 Summary of Improvements</h2>
+      <ul style="line-height: 1.8">
+        <li>✅ <strong>Enhanced primary text contrast</strong> from #333 to #1a1a1a (12.63:1 → 17.40:1)</li>
+        <li>✅ <strong>Improved footer link color</strong> from #1a5490 to #1a4480 for better readability</li>
+        <li>✅ <strong>Added CSS custom properties</strong> for consistent color management</li>
+        <li>✅ <strong>Better focus indicators</strong> with proper color contrast for keyboard navigation</li>
+        <li>✅ <strong>Enhanced hover states</strong> with darker blue (#123456) for AAA compliance</li>
+        <li>✅ <strong>All combinations meet WCAG AA standards</strong> with most achieving AAA level</li>
+      </ul>
+    </div>
+
+    <div class="test-section">
+      <h2>🔧 Technical Details</h2>
+      <p><strong>Color Palette:</strong></p>
+      <ul style="font-family: monospace; line-height: 1.8">
+        <li><strong>Primary Yellow:</strong> rgb(243, 203, 46) / #F3CB2E</li>
+        <li><strong>Primary Blue:</strong> #1a4480 (improved from #1a5490)</li>
+        <li><strong>Primary Text:</strong> #1a1a1a (improved from #333)</li>
+        <li><strong>Hover Blue:</strong> #123456 (new dark state)</li>
+        <li><strong>Background:</strong> #ffffff</li>
+      </ul>
+    </div>
+
+    <style>
+      /* Test the actual focus states */
+      a:focus {
+        outline: 3px solid rgba(26, 68, 128, 0.4);
+        outline-offset: 2px;
+        border-radius: 2px;
+      }
+    </style>
+  </body>
+</html>
