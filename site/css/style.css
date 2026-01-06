@@ -193,6 +193,277 @@ footer a:focus {
 }
 
 /* ==========================================================================
+   Enhanced Interactive Elements & Hover States
+   ========================================================================== */
+
+/* Content Links */
+main a:not([class]) {
+  color: var(--color-primary-blue);
+  text-decoration: underline;
+  text-decoration-color: rgba(26, 68, 128, 0.3);
+  text-underline-offset: 2px;
+  transition: all 0.25s ease;
+  font-weight: 500;
+}
+
+main a:not([class]):hover,
+main a:not([class]):focus {
+  color: var(--color-primary-blue-dark);
+  text-decoration-color: var(--color-primary-blue-dark);
+  text-decoration-thickness: 2px;
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Images with Hover Effects */
+main img {
+  transition: all 0.3s ease;
+  border-radius: 4px;
+}
+
+main img:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+  filter: brightness(1.02) contrast(1.02);
+}
+
+/* Special Styling for Amazon Button */
+main a[href*="amazon"] img {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+main a[href*="amazon"]:hover img {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 30px var(--shadow-medium);
+}
+
+/* Book Cover and Framework Images */
+img[alt*="book cover"],
+img[alt*="Framework"],
+img[alt*="Principles"] {
+  box-shadow: 0 4px 15px var(--shadow-light);
+  transition: all 0.4s ease;
+}
+
+img[alt*="book cover"]:hover,
+img[alt*="Framework"]:hover,
+img[alt*="Principles"]:hover {
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 15px 35px var(--shadow-focus);
+}
+
+/* Author Photo */
+img[alt*="Stephen Ellis"] {
+  box-shadow: 0 6px 20px var(--shadow-light);
+  transition: all 0.3s ease;
+}
+
+img[alt*="Stephen Ellis"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+/* Blockquotes Enhancement */
+blockquote {
+  border-left: 4px solid var(--color-primary-blue);
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  background: rgba(26, 68, 128, 0.03);
+  border-radius: 0 8px 8px 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+blockquote:hover {
+  background: rgba(26, 68, 128, 0.06);
+  border-left-color: var(--color-primary-blue-dark);
+  transform: translateX(4px);
+  box-shadow: 0 4px 15px var(--shadow-light);
+}
+
+blockquote::before {
+  content: '"';
+  font-size: 4rem;
+  color: var(--color-primary-blue);
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  opacity: 0.2;
+  transition: all 0.3s ease;
+}
+
+blockquote:hover::before {
+  opacity: 0.4;
+  color: var(--color-primary-blue-dark);
+}
+
+blockquote p {
+  margin-bottom: 1rem;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+blockquote cite {
+  font-weight: 600;
+  color: var(--color-primary-blue);
+  font-style: normal;
+  transition: color 0.2s ease;
+}
+
+blockquote:hover cite {
+  color: var(--color-primary-blue-dark);
+}
+
+/* Form Elements Enhancement */
+input[type="text"],
+input[type="email"],
+textarea,
+button[type="submit"] {
+  transition: all 0.25s ease;
+  border: 2px solid rgba(26, 68, 128, 0.2);
+  border-radius: 6px;
+  padding: 0.75rem;
+  font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+  border-color: var(--color-primary-blue);
+  box-shadow: 0 0 0 3px var(--color-focus-ring);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+textarea:hover {
+  border-color: rgba(26, 68, 128, 0.4);
+  box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+button[type="submit"] {
+  background: var(--color-primary-blue);
+  color: white;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button[type="submit"]:hover {
+  background: var(--color-primary-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Email Link Fallback Enhancement */
+.email-link {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: var(--color-primary-blue);
+  color: white !important;
+  text-decoration: none !important;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
+
+.email-link:hover,
+.email-link:focus {
+  background: var(--color-primary-blue-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px var(--shadow-medium);
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: 2px;
+}
+
+/* Resource Download Links */
+main a[href$=".pdf"],
+main a[href$=".pptx"] {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem 0.5rem 0.5rem 0;
+  background: linear-gradient(135deg, var(--color-primary-yellow) 0%, rgb(245, 210, 70) 100%);
+  color: var(--color-text-primary) !important;
+  text-decoration: none !important;
+  border-radius: 6px;
+  font-weight: 600;
+  box-shadow: 0 2px 8px var(--shadow-light);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+main a[href$=".pdf"]::after,
+main a[href$=".pptx"]::after {
+  content: "↓";
+  margin-left: 0.5rem;
+  font-weight: bold;
+  transition: transform 0.2s ease;
+}
+
+main a[href$=".pdf"]:hover,
+main a[href$=".pptx"]:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px var(--shadow-medium);
+  background: linear-gradient(135deg, rgb(245, 210, 70) 0%, var(--color-primary-yellow) 100%);
+}
+
+main a[href$=".pdf"]:hover::after,
+main a[href$=".pptx"]:hover::after {
+  transform: translateY(2px);
+}
+
+/* Article and Section Enhancement */
+article {
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  border-radius: 8px;
+}
+
+article:hover {
+  background: rgba(243, 203, 46, 0.02);
+  box-shadow: 0 4px 15px var(--shadow-light);
+  transform: translateY(-1px);
+}
+
+/* List Items Enhancement */
+main ul li,
+main ol li {
+  transition: color 0.2s ease;
+  margin: 0.5rem 0;
+}
+
+main ul li:hover,
+main ol li:hover {
+  color: var(--color-primary-blue);
+  padding-left: 0.25rem;
+}
+
+/* Star Rating Enhancement */
+blockquote p:first-child {
+  font-size: 1.2rem;
+  color: #ffc107;
+  text-shadow: 0 1px 3px var(--shadow-light);
+  transition: all 0.2s ease;
+}
+
+blockquote:hover p:first-child {
+  transform: scale(1.05);
+  text-shadow: 0 2px 6px var(--shadow-medium);
+}
+
+/* ==========================================================================
    Responsive Design - Mobile
    ========================================================================== */
 
