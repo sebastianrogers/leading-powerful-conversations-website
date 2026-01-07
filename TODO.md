@@ -1,5 +1,7 @@
 # TODO - Leading Powerful Conversations Website
 
+> **For AI Assistants**: See `AGENTS.md` for project structure, file locations, and development context.
+
 ## 🎨 Design & Styling
 
 - [x] **Implement responsive design testing across devices** - ✅ Comprehensive responsive design implementation completed with mobile-first approach, hamburger navigation, extensive media queries for all breakpoints, responsive images, accessibility features, automated testing tools, and visual testing suite
@@ -21,7 +23,7 @@
 ## 🛠️ Technical Improvements
 
 - [x] **Add proper meta tags (Open Graph, Twitter Cards) for social media sharing** - ✅ Comprehensive social media meta tags implemented across all pages with Open Graph and Twitter Card support, using appropriate images (book cover, author photo, framework) for each page
-- [ ] Implement structured data (JSON-LD) for better SEO
+- [x] **Implement structured data (JSON-LD) for better SEO** - ✅ Comprehensive JSON-LD structured data implemented across all pages: Website/Organization schema, Book schema, Person schema for author, ContactPage schema, ItemList schema for resources, ProfilePage schema for bio, and error page schema for 404
 - [ ] Add Google Analytics or similar tracking
 - [ ] Optimize images for web (compression, WebP format)
 - [ ] Add sitemap.xml generation (currently static)
@@ -40,6 +42,7 @@
 ## 🚀 Features
 
 - [ ] Implement contact form with validation
+- [ ] Make pictures on index.html 'roll'
 - [ ] Add book preview/sample chapters
 - [x] **Create testimonials carousel** - ✅ CSS-only testimonials carousel implemented with responsive grid layout, smooth animations, navigation dots, hover effects, and accessibility support 🎨
 - [ ] Add social media links and sharing buttons
@@ -91,6 +94,11 @@
 - [ ] Add podcast integration if applicable
 
 ---
+
+## Hosting
+
+- [ ] Establish how to pass control of the domain
+- [ ] Google analytics - set Steve up
 
 ## Priority Levels
 

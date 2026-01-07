@@ -41,6 +41,49 @@
     <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ContactPage",
+            "@id": "https://leadingpowerfulconversations.com/contact.html#webpage",
+            "name": "Contact - Leading Powerful Conversations",
+            "description": "Contact us to start your journey toward powerful conversations. Get coaching, training, and resources for transforming your communication skills.",
+            "url": "https://leadingpowerfulconversations.com/contact.html",
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Leading Powerful Conversations",
+              "url": "https://leadingpowerfulconversations.com/"
+            },
+            "mainEntity": {
+              "@id": "https://leadingpowerfulconversations.com/#organization"
+            }
+          },
+          {
+            "@type": "Organization",
+            "@id": "https://leadingpowerfulconversations.com/#organization",
+            "name": "Leading Powerful Conversations",
+            "description": "Transforming communication skills through Christian leadership coaching and small group facilitation",
+            "url": "https://leadingpowerfulconversations.com/",
+            "founder": {
+              "@type": "Person",
+              "name": "Stephen Ellis"
+            },
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "contactType": "Customer Service",
+              "email": "sebastian@crazybearandraggedstaff.com",
+              "availableLanguage": "English"
+            },
+            "areaServed": "Worldwide",
+            "serviceType": ["Christian Leadership Coaching", "Small Group Training", "Educational Resources", "Speaking Engagements"]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>

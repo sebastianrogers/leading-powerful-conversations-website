@@ -43,6 +43,80 @@
     <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://leadingpowerfulconversations.com/#website",
+            "name": "Leading Powerful Conversations",
+            "description": "Transform your communication skills and lead with impact",
+            "url": "https://leadingpowerfulconversations.com/",
+            "publisher": {
+              "@id": "https://leadingpowerfulconversations.com/#person"
+            },
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": "https://leadingpowerfulconversations.com/?s={search_term_string}",
+              "query-input": "required name=search_term_string"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://leadingpowerfulconversations.com/#person",
+            "name": "Stephen Ellis",
+            "jobTitle": "Author, Leadership Coach, Educator",
+            "description": "Author of Leading Powerful Conversations with over 40 years experience in education and Christian leadership coaching",
+            "image": "https://leadingpowerfulconversations.com/images/steve-ellis-photo.png",
+            "url": "https://leadingpowerfulconversations.com/bio.html",
+            "email": "stephenellis456@outlook.com",
+            "knowsAbout": ["Christian Leadership", "Small Group Facilitation", "Coaching", "Education", "Conversation Skills"]
+          },
+          {
+            "@type": "Book",
+            "name": "Leading Powerful Conversations",
+            "author": {
+              "@id": "https://leadingpowerfulconversations.com/#person"
+            },
+            "description": "A practical guide for creating deeper, Spirit-led dialogue and transformation in small group settings with a five-step coaching framework",
+            "image": "https://leadingpowerfulconversations.com/images/Leading-Powerful-Convesations-Front-Cover.jpg",
+            "isbn": "B0CGYPVLF9",
+            "bookFormat": "EBook",
+            "genre": ["Christian Education", "Leadership", "Spirituality", "Self-Help"],
+            "about": ["Christian Coaching", "Small Groups", "Bible Study", "Leadership", "Spiritual Growth"],
+            "offers": {
+              "@type": "Offer",
+              "availability": "InStock",
+              "seller": {
+                "@type": "Organization",
+                "name": "Amazon"
+              },
+              "url": "https://www.amazon.co.uk/Leading-Powerful-Conversations-coaching-framework/dp/B0CGYPVLF9/"
+            }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://leadingpowerfulconversations.com/#webpage",
+            "name": "Leading Powerful Conversations - Transform Your Communication Skills",
+            "description": "Transform your communication skills and lead with impact. Discover powerful conversation techniques for Christian leadership, small groups, and spiritual growth.",
+            "url": "https://leadingpowerfulconversations.com/",
+            "isPartOf": {
+              "@id": "https://leadingpowerfulconversations.com/#website"
+            },
+            "about": {
+              "@id": "https://leadingpowerfulconversations.com/#person"
+            },
+            "mainEntity": {
+              "@type": "Book",
+              "name": "Leading Powerful Conversations"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>

@@ -41,6 +41,60 @@
     <link rel="manifest" href="/site.webmanifest" />
 
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebPage",
+            "@id": "https://leadingpowerfulconversations.com/resources.html#webpage",
+            "name": "Resources - Leading Powerful Conversations",
+            "description": "Discover valuable resources for leadership coaching and conversation training. Access tools, guides, and techniques to enhance your communication skills.",
+            "url": "https://leadingpowerfulconversations.com/resources.html",
+            "isPartOf": {
+              "@type": "WebSite",
+              "name": "Leading Powerful Conversations",
+              "url": "https://leadingpowerfulconversations.com/"
+            },
+            "about": ["Christian Education", "Small Group Resources", "Leadership Training", "Bible Study Materials"]
+          },
+          {
+            "@type": "ItemList",
+            "name": "Free Resources for Leading Powerful Conversations",
+            "description": "Downloadable resources to support group leaders, coaches, and facilitators using the book Leading Powerful Conversations",
+            "numberOfItems": 2,
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "DigitalDocument",
+                  "name": "5 Stages of a Small Group Powerful Conversation - PowerPoint Version",
+                  "description": "A quick overview of the book framework in PowerPoint format",
+                  "url": "https://leadingpowerfulconversations.com/resources/Leading-Powerful-Conversations-PPT.pptx",
+                  "encodingFormat": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+                  "about": ["Small Group Leadership", "Christian Coaching", "Framework Overview"]
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "DigitalDocument",
+                  "name": "5 Stages of a Small Group Powerful Conversation - PDF Version",
+                  "description": "A quick overview of the book framework in PDF format",
+                  "url": "https://leadingpowerfulconversations.com/resources/Leading-Powerful-Conversations-PDF.pdf",
+                  "encodingFormat": "application/pdf",
+                  "about": ["Small Group Leadership", "Christian Coaching", "Framework Overview"]
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
