@@ -34,21 +34,83 @@ All website files are located in the `site/` directory:
 
 ## Local Development
 
-To view the site locally:
+### Prerequisites
 
-1. Navigate to the site directory:
+- A modern web browser (Chrome, Firefox, Safari, Edge)
+- Python 3.x (for local server) OR any other local server
+- Git (for version control)
+- Text editor or IDE (VS Code recommended)
 
+### Getting Started
+
+1. **Clone the repository**:
+   ```bash
+   git clone [repository-url]
+   cd leading-powerful-conversations-website
+   ```
+
+2. **Navigate to the site directory**:
    ```bash
    cd site
    ```
 
-2. Start a local web server:
+3. **Start a local web server** (choose one method):
 
+   **Option A: Python 3**
    ```bash
    python3 -m http.server 8000
    ```
 
-   Then visit <http://localhost:8000>
+   **Option B: Python 2**
+   ```bash
+   python -m SimpleHTTPServer 8000
+   ```
+
+   **Option C: Node.js (if installed)**
+   ```bash
+   npx serve .
+   ```
+
+   **Option D: PHP (if installed)**
+   ```bash
+   php -S localhost:8000
+   ```
+
+4. **Open your browser** and visit:
+   - <http://localhost:8000> (for Python/PHP)
+   - Check terminal output for port if using other methods
+
+### Development Workflow
+
+1. **File Structure**: All website files are in the `site/` directory
+2. **Live Reloading**: Refresh your browser after making changes
+3. **Testing**: Test on different screen sizes and browsers
+4. **Validation**: Use browser dev tools to check for errors
+
+### Common Development Tasks
+
+- **Edit Content**: Modify HTML files in `site/`
+- **Update Styles**: Edit CSS files in `site/css/`
+- **Add Images**: Place files in `site/images/`
+- **Test Forms**: Contact form works locally but emails won't send
+- **Check Responsive**: Use browser dev tools device simulation
+
+### Project Structure
+```
+site/
+├── index.html          # Home page
+├── bio.html           # About/Biography page
+├── contact.html       # Contact form page
+├── resources.html     # Resources page
+├── 404.html          # Error page
+├── css/              # Stylesheets
+│   ├── main.css      # Main styles
+│   ├── responsive.css # Mobile/tablet styles
+│   └── [other files] # Component-specific styles
+├── js/               # JavaScript files
+├── images/           # Image assets
+└── resources/        # Downloadable resources
+```
 
 ## Customization
 
