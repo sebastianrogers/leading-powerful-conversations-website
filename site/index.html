@@ -252,19 +252,87 @@
 
       <article>
         <h2>The <strong>5 Step</strong> Coaching Framework</h2>
-        <picture>
-          <source
-            type="image/webp"
-            sizes="(max-width: 768px) 100vw, 600px"
-            srcset="images/FrameworkFull-300w.webp 300w, images/FrameworkFull-600w.webp 600w, images/FrameworkFull-1200w.webp 1200w"
-          />
-          <source
-            type="image/png"
-            sizes="(max-width: 768px) 100vw, 600px"
-            srcset="images/FrameworkFull-300w.png 300w, images/FrameworkFull-600w.png 600w, images/FrameworkFull-1200w.png 1200w"
-          />
-          <img src="images/FrameworkFull.png" alt="Leading Powerful Conversations Framework" loading="lazy" />
-        </picture>
+
+        <section class="framework-carousel-section">
+          <div class="framework-carousel">
+            <!-- Radio buttons for navigation (hidden) -->
+            <input type="radio" name="framework" id="framework1" checked />
+            <input type="radio" name="framework" id="framework2" />
+            <input type="radio" name="framework" id="framework3" />
+            <input type="radio" name="framework" id="framework4" />
+            <input type="radio" name="framework" id="framework5" />
+
+            <!-- Framework slides container -->
+            <div class="framework-container">
+              <div class="framework-track">
+                <div class="framework-slide">
+                  <div class="framework-step">
+                    <h3>Step 1: Check-in</h3>
+                    <picture>
+                      <img src="images/steps/CheckIn.png" alt="Framework Step 1: Check-in" loading="lazy" />
+                    </picture>
+                    <p>Begin with an intentional moment to connect and assess where group members are emotionally and spiritually.</p>
+                  </div>
+                </div>
+
+                <div class="framework-slide">
+                  <div class="framework-step">
+                    <h3>Step 2: Share</h3>
+                    <picture>
+                      <img src="images/steps/Share.png" alt="Framework Step 2: Share" loading="lazy" />
+                    </picture>
+                    <p>Create a safe space for group members to share their thoughts, experiences, and insights.</p>
+                  </div>
+                </div>
+
+                <div class="framework-slide">
+                  <div class="framework-step">
+                    <h3>Step 3: Explore</h3>
+                    <picture>
+                      <img src="images/steps/Explore.png" alt="Framework Step 3: Explore" loading="lazy" />
+                    </picture>
+                    <p>Dive deeper through powerful questions that encourage reflection and discovery.</p>
+                  </div>
+                </div>
+
+                <div class="framework-slide">
+                  <div class="framework-step">
+                    <h3>Step 4: Consider</h3>
+                    <picture>
+                      <img src="images/steps/Consider.png" alt="Framework Step 4: Consider" loading="lazy" />
+                    </picture>
+                    <p>Help the group consider the implications and applications of their insights.</p>
+                  </div>
+                </div>
+
+                <div class="framework-slide">
+                  <div class="framework-step">
+                    <h3>Step 5: Check-out</h3>
+                    <picture>
+                      <img src="images/steps/CheckOut.png" alt="Framework Step 5: Check-out" loading="lazy" />
+                    </picture>
+                    <p>Close with commitment to action, prayer, and accountability for what was shared.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Navigation dots -->
+            <div class="framework-nav">
+              <label for="framework1" class="nav-dot" aria-label="View Step 1: Check-in"></label>
+              <label for="framework2" class="nav-dot" aria-label="View Step 2: Share"></label>
+              <label for="framework3" class="nav-dot" aria-label="View Step 3: Explore"></label>
+              <label for="framework4" class="nav-dot" aria-label="View Step 4: Consider"></label>
+              <label for="framework5" class="nav-dot" aria-label="View Step 5: Check-out"></label>
+            </div>
+
+            <!-- Navigation arrows -->
+            <div class="framework-arrows">
+              <button class="framework-prev" aria-label="Previous framework step">&#8249;</button>
+              <button class="framework-next" aria-label="Next framework step">&#8250;</button>
+            </div>
+          </div>
+        </section>
       </article>
 
       <article>
@@ -506,6 +574,41 @@
           }
         });
       });
+
+      // Framework carousel navigation
+      const frameworkPrev = document.querySelector(".framework-prev");
+      const frameworkNext = document.querySelector(".framework-next");
+      const frameworkRadios = document.querySelectorAll('input[name="framework"]');
+
+      if (frameworkPrev && frameworkNext && frameworkRadios.length > 0) {
+        let currentFrameworkSlide = 0;
+
+        function updateFrameworkSlide(direction) {
+          if (direction === "next") {
+            currentFrameworkSlide = (currentFrameworkSlide + 1) % frameworkRadios.length;
+          } else if (direction === "prev") {
+            currentFrameworkSlide = (currentFrameworkSlide - 1 + frameworkRadios.length) % frameworkRadios.length;
+          }
+          frameworkRadios[currentFrameworkSlide].checked = true;
+        }
+
+        frameworkNext.addEventListener("click", () => updateFrameworkSlide("next"));
+        frameworkPrev.addEventListener("click", () => updateFrameworkSlide("prev"));
+
+        // Update current slide when radio buttons change
+        frameworkRadios.forEach((radio, index) => {
+          radio.addEventListener("change", () => {
+            if (radio.checked) {
+              currentFrameworkSlide = index;
+            }
+          });
+        });
+
+        // Auto-advance framework carousel every 8 seconds (optional)
+        setInterval(() => {
+          updateFrameworkSlide("next");
+        }, 8000);
+      }
     </script>
   </body>
 </html>

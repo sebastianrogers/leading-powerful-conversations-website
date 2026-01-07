@@ -4,10 +4,6 @@
 
 ## 🚀 Features
 
-- [ ] Implement contact form with validation
-- [ ] Make pictures on index.html 'roll'
-- [ ] Add book preview/sample chapters
-- [x] **Create testimonials carousel** - ✅ CSS-only testimonials carousel implemented with responsive grid layout, smooth animations, navigation dots, hover effects, and accessibility support 🎨
 - [ ] Add social media links and sharing buttons
 - [ ] Implement search functionality for resources
 - [ ] Add blog section for ongoing content
