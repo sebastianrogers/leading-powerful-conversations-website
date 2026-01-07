@@ -2,32 +2,6 @@
 
 > **For AI Assistants**: See `AGENTS.md` for project structure, file locations, and development context.
 
-## 📚 Resources & Documentation
-
-- [x] Add proper README with local development instructions
-- [x] Document deployment process
-- [x] Create style guide for consistent branding
-- [x] Add content guidelines for future updates
-- [x] Document accessibility standards being followed
-
-## 🎯 Future Enhancements
-
-- [ ] Consider adding a simple CMS (Forestry, Netlify CMS)
-- [ ] Add internationalization (i18n) if targeting multiple languages
-- [ ] Implement dark mode toggle
-- [ ] Add animations and micro-interactions
-- [ ] Consider PWA features (service worker, offline support)
-- [ ] Add customer review system
-- [ ] Integrate with calendar for speaking engagements
-
-## 📋 Content Strategy
-
-- [ ] Create editorial calendar
-- [ ] Develop case studies
-- [ ] Add resource downloads (worksheets, guides)
-- [ ] Create video content integration
-- [ ] Add podcast integration if applicable
-
 ---
 
 ## Hosting
