@@ -146,23 +146,37 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
-            src="https://leadingpowerfulconversations.com/wp-content/uploads/2023/08/Amazon-buy-now-button.png"
-            alt="Buy now on Amazon"
-            width="189"
-            height="71"
-          />
+          <picture>
+            <source type="image/webp" srcset="images/Amazon-buy-now-button-300x113.webp" />
+            <img src="images/Amazon-buy-now-button-300x113.png" alt="Buy now on Amazon" loading="lazy" width="189" height="71" />
+          </picture>
         </a>
 
         <p>
           <a href="resources/Leading-Powerful-Conversations-PDF.pdf" target="_blank">Additional Resource</a>
         </p>
 
-        <img
-          src="images/Leading-Powerful-Convesations-Front-Cover.jpg"
-          alt="Leading Powerful Conversations book cover"
-          style="max-width: 300px; height: auto; margin: 20px 0"
-        />
+        <picture>
+          <source
+            type="image/webp"
+            sizes="(max-width: 768px) 100vw, 300px"
+            srcset="
+              images/Leading-Powerful-Convesations-Front-Cover-300w.webp   300w,
+              images/Leading-Powerful-Convesations-Front-Cover-600w.webp   600w,
+              images/Leading-Powerful-Convesations-Front-Cover-1200w.webp 1200w
+            "
+          />
+          <source
+            type="image/jpg"
+            sizes="(max-width: 768px) 100vw, 300px"
+            srcset="
+              images/Leading-Powerful-Convesations-Front-Cover-300w.jpg   300w,
+              images/Leading-Powerful-Convesations-Front-Cover-600w.jpg   600w,
+              images/Leading-Powerful-Convesations-Front-Cover-1200w.jpg 1200w
+            "
+          />
+          <img src="images/Leading-Powerful-Convesations-Front-Cover.jpg" alt="Leading Powerful Conversations book cover" loading="lazy" />
+        </picture>
 
         <blockquote>
           <p>"As iron sharpens iron, so one man sharpens another (Proverbs 27:17)"</p>
@@ -225,12 +239,36 @@
 
       <article>
         <h2>The <strong>5 Step</strong> Coaching Framework</h2>
-        <img src="images/FrameworkFull.png" alt="The 5 Step Coaching Framework" />
+        <picture>
+          <source
+            type="image/webp"
+            sizes="(max-width: 768px) 100vw, 600px"
+            srcset="images/FrameworkFull-300w.webp 300w, images/FrameworkFull-600w.webp 600w, images/FrameworkFull-1200w.webp 1200w"
+          />
+          <source
+            type="image/png"
+            sizes="(max-width: 768px) 100vw, 600px"
+            srcset="images/FrameworkFull-300w.png 300w, images/FrameworkFull-600w.png 600w, images/FrameworkFull-1200w.png 1200w"
+          />
+          <img src="images/FrameworkFull.png" alt="Leading Powerful Conversations Framework" loading="lazy" />
+        </picture>
       </article>
 
       <article>
         <h2>The <strong>7 Principles</strong> of a Powerful Conversation</h2>
-        <img src="images/seven-principles.png" alt="The 7 Principles" />
+        <picture>
+          <source
+            type="image/webp"
+            sizes="(max-width: 768px) 100vw, 500px"
+            srcset="images/seven-principles-300w.webp 300w, images/seven-principles-600w.webp 600w, images/seven-principles-1200w.webp 1200w"
+          />
+          <source
+            type="image/png"
+            sizes="(max-width: 768px) 100vw, 500px"
+            srcset="images/seven-principles-300w.png 300w, images/seven-principles-600w.png 600w, images/seven-principles-1200w.png 1200w"
+          />
+          <img src="images/seven-principles.png" alt="Seven Principles of Leading Powerful Conversations" loading="lazy" />
+        </picture>
         <ol>
           <li>Every member is <strong>uniquely gifted</strong> to serve God</li>
           <li>New learning is <strong>built on</strong> existing knowledge</li>
