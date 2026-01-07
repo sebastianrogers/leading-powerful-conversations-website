@@ -2,20 +2,6 @@
 
 > **For AI Assistants**: See `AGENTS.md` for project structure, file locations, and development context.
 
-## 🚀 Features
-
-- [ ] Add social media links and sharing buttons
-- [ ] Implement search functionality for resources
-- [ ] Add blog section for ongoing content
-
-## 📈 Marketing & SEO
-
-- [ ] Optimize page titles and meta descriptions
-- [ ] Add local business schema if applicable
-- [ ] Create content calendar for regular updates
-- [ ] Add affiliate link tracking for Amazon button
-- [ ] Implement Google Search Console
-- [ ] Add XML sitemap with proper priority and changefreq
 
 ## 🔧 Development Workflow
 
