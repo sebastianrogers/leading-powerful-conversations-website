@@ -4,7 +4,8 @@
 
 ## 🔧 Development Workflow
 
-- [ ] Set up development/staging environment
+- [x] Set up development/staging environment
+- [x] Extract JavaScript from HTML files into separate JS files (completed 2026-01-07)
 - [ ] Add code formatting tools (Prettier, ESLint)
 - [ ] Create component library or design system
 - [ ] Set up automated testing for critical paths
