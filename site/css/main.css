@@ -1,0 +1,54 @@
+/* ==========================================================================
+   Leading Powerful Conversations - Main Stylesheet
+   Modular CSS Architecture for Better Maintainability
+   ========================================================================== */
+
+/* Import CSS modules in the correct order */
+
+/* 1. Variables and Design System Foundation */
+@import url('./variables.css');
+
+/* 2. Base Styles and Typography */
+@import url('./base.css');
+
+/* 3. Layout Components */
+@import url('./layout.css');
+
+/* 4. Interactive Components */
+@import url('./components.css');
+
+/* 5. Accessibility Features */
+@import url('./accessibility.css');
+
+/* 6. Responsive Design */
+@import url('./responsive.css');
+
+/* 7. Specialized Components */
+@import url('./carousels.css');
+@import url('./error.css');
+
+/* 8. Print Styles (loaded last) */
+@import url('./print.css');
+
+/* ==========================================================================
+   Architecture Notes:
+   
+   This modular approach provides several benefits:
+   - Better maintainability and organization
+   - Easier collaboration (multiple developers can work on different modules)
+   - Improved debugging and development experience
+   - Better performance potential (can load only needed modules)
+   - Clearer separation of concerns
+   - Easier version control with smaller, focused files
+   
+   File Organization:
+   - variables.css: Design tokens, colors, typography scale, spacing
+   - base.css: Reset, typography, base element styles
+   - layout.css: Header, navigation, footer, main content areas
+   - components.css: Buttons, forms, interactive elements
+   - accessibility.css: Skip links, focus states, WCAG compliance
+   - responsive.css: Media queries and responsive behavior
+   - carousels.css: Testimonials and framework carousel components
+   - error.css: 404 page specific styles
+   - print.css: Print-specific styles
+   ========================================================================== */

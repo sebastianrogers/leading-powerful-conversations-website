@@ -1,0 +1,267 @@
+/* ==========================================================================
+   Base Styles and Typography
+   ========================================================================== */
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base Body Styles */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+  background-color: var(--color-background-white);
+  font-weight: var(--font-weight-normal);
+}
+
+/* ==========================================================================
+   Typography Styles
+   ========================================================================== */
+
+/* Heading Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+  margin-top: 0;
+  margin-bottom: var(--space-4);
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-extrabold);
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: var(--line-height-tight);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  margin-top: var(--space-12);
+  margin-bottom: var(--space-6);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-semibold);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-4);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-3);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-2);
+}
+
+h6 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-2);
+}
+
+/* Paragraph and Text Styles */
+p {
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-primary);
+}
+
+p.lead {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-6);
+}
+
+p.small {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* List Styles */
+ul,
+ol {
+  margin-bottom: var(--space-4);
+  padding-left: var(--space-6);
+}
+
+li {
+  margin-bottom: var(--space-2);
+  line-height: var(--line-height-relaxed);
+}
+
+ul li {
+  list-style-type: disc;
+}
+
+ol li {
+  list-style-type: decimal;
+}
+
+/* Nested lists */
+ul ul,
+ol ol,
+ul ol,
+ol ul {
+  margin-top: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+/* Strong and Emphasis */
+strong,
+b {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+/* Small text */
+small {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Code styles */
+code {
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: var(--font-size-sm);
+  background: rgba(26, 68, 128, 0.08);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--space-1);
+  color: var(--color-primary-blue-dark);
+}
+
+pre {
+  background: rgba(26, 68, 128, 0.05);
+  padding: var(--space-4);
+  border-radius: var(--space-2);
+  overflow-x: auto;
+  margin-bottom: var(--space-4);
+  border-left: var(--space-1) solid var(--color-primary-blue);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+}
+
+/* HR styles */
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-primary-blue), transparent);
+  margin: var(--space-12) 0;
+}
+
+/* Mark/highlight styles */
+mark {
+  background: var(--color-primary-yellow);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--space-1);
+  color: var(--color-text-primary);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: var(--space-1) solid var(--color-primary-blue);
+  padding: var(--space-6) var(--space-8);
+  margin: var(--space-8) 0;
+  background: rgba(26, 68, 128, 0.03);
+  border-radius: 0 var(--space-2) var(--space-2) 0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+blockquote:hover {
+  background: rgba(26, 68, 128, 0.06);
+  border-left-color: var(--color-primary-blue-dark);
+  transform: translateX(var(--space-1));
+  box-shadow: 0 var(--space-1) var(--space-3-5) var(--shadow-light);
+}
+
+blockquote::before {
+  content: '"';
+  font-size: var(--font-size-5xl);
+  color: var(--color-primary-blue);
+  position: absolute;
+  top: calc(-1 * var(--space-2));
+  left: calc(-1 * var(--space-2));
+  opacity: 0.2;
+  transition: all 0.3s ease;
+}
+
+blockquote:hover::before {
+  opacity: 0.4;
+  color: var(--color-primary-blue-dark);
+}
+
+blockquote p {
+  margin-bottom: var(--space-4);
+  font-style: italic;
+  line-height: var(--line-height-loose);
+  font-size: var(--font-size-md);
+}
+
+blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+blockquote cite {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-blue);
+  font-style: normal;
+  font-size: var(--font-size-sm);
+  transition: color 0.2s ease;
+}
+
+blockquote:hover cite {
+  color: var(--color-primary-blue-dark);
+}
+
+/* Content Links */
+main a:not([class]) {
+  color: var(--color-primary-blue);
+  text-decoration: underline;
+  text-decoration-color: rgba(26, 68, 128, 0.3);
+  text-underline-offset: var(--space-0-5);
+  transition: all 0.25s ease;
+  font-weight: var(--font-weight-medium);
+}
+
+main a:not([class]):hover,
+main a:not([class]):focus {
+  color: var(--color-primary-blue-dark);
+  text-decoration-color: var(--color-primary-blue-dark);
+  text-decoration-thickness: 2px;
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: var(--space-0-5);
+  border-radius: var(--space-0-5);
+}

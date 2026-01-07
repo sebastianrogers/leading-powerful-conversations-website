@@ -1,0 +1,107 @@
+/* ==========================================================================
+   Accessibility Features - Skip Links, Focus States, and WCAG Compliance
+   ========================================================================== */
+
+/* Skip Link for Accessibility */
+.skip-link {
+  position: absolute;
+  top: -var(--space-10);
+  left: 0;
+  background: rgba(26, 26, 26, 0.8);
+  color: var(--color-background-white);
+  padding: var(--space-1-5) var(--space-3);
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 0 0 var(--space-1) 0;
+  font-weight: var(--font-weight-normal);
+  font-size: var(--font-size-xs);
+  transition: all 0.2s ease;
+  opacity: 0.7;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--color-focus-ring);
+  outline-offset: var(--space-0-5);
+  opacity: 1;
+  background: var(--color-background-black);
+  font-weight: var(--font-weight-semibold);
+  padding: var(--space-2) var(--space-4);
+}
+
+/* Screen reader only text */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Focus improvements for better keyboard navigation */
+:focus {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: var(--space-0-5);
+}
+
+/* Ensure sufficient color contrast */
+@media (prefers-contrast: high) {
+  :root {
+    --color-text-primary: #000000;
+    --color-primary-blue: #0066cc;
+    --color-primary-blue-dark: #004499;
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .nav-toggle span {
+    transition: none;
+  }
+}
+
+/* Enhanced focus styles for important interactive elements */
+nav a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+.btn-primary:focus,
+.btn-secondary:focus,
+.email-link:focus {
+  outline: 2px solid var(--color-focus-ring);
+  outline-offset: var(--space-0-5);
+}
+
+/* Ensure interactive elements meet minimum touch target size */
+@media (max-width: 768px) {
+  nav ul[role="menubar"] a,
+  main a,
+  button,
+  input,
+  textarea {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Special handling for inline links that shouldn't be flexed */
+  main p a,
+  main li a {
+    display: inline;
+    min-height: auto;
+  }
+}

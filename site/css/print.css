@@ -1,0 +1,104 @@
+/* ==========================================================================
+   Print Styles
+   ========================================================================== */
+
+@media print {
+  header {
+    position: static;
+    box-shadow: none;
+  }
+
+  .skip-link {
+    display: none;
+  }
+
+  /* Hide navigation elements */
+  .nav-toggle {
+    display: none;
+  }
+
+  nav ul[role="menubar"] {
+    display: none;
+  }
+
+  /* Hide interactive elements that don't make sense in print */
+  .testimonials-carousel,
+  .framework-carousel,
+  .social-sharing,
+  .share-buttons,
+  .nav-dot,
+  .framework-arrows {
+    display: none;
+  }
+
+  /* Optimize text for print */
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: #000;
+    background: #fff;
+  }
+
+  h1 {
+    font-size: 24pt;
+  }
+
+  h2 {
+    font-size: 20pt;
+  }
+
+  h3 {
+    font-size: 16pt;
+  }
+
+  h4 {
+    font-size: 14pt;
+  }
+
+  /* Ensure links are visible in print */
+  a:link,
+  a:visited {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  /* Show URLs after links */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 10pt;
+    color: #666;
+  }
+
+  /* Optimize images for print */
+  img {
+    max-width: 100%;
+    height: auto;
+    page-break-inside: avoid;
+  }
+
+  /* Page break management */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid;
+  }
+
+  blockquote,
+  pre {
+    page-break-inside: avoid;
+  }
+
+  /* Remove shadows and transitions for print */
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
