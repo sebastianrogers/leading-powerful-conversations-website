@@ -1,4 +1,44 @@
+# Robots.txt for Leading Powerful Conversations Website
+# Updated: January 7, 2026
+
+# Allow all robots to access the site
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
+# Explicitly allow important pages and directories
+Allow: /index.html
+Allow: /bio.html
+Allow: /resources.html
+Allow: /contact.html
+Allow: /css/
+Allow: /images/
+Allow: /resources/
+
+# Disallow access to sensitive or unnecessary files
+Disallow: /.git/
+Disallow: /*.log
+Disallow: /tmp/
+Disallow: /cache/
+Disallow: /.env
+Disallow: /.htaccess
+
+# Allow crawling of CSS and JS files for better SEO
+User-agent: Googlebot
+Allow: /css/
+Allow: /js/
+
+# Specific directives for social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+# Crawl-delay to be respectful to server resources
+# Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://leadingpowerfulconversations.com/sitemap.xml
+
+# Additional sitemaps (if any)
+# Sitemap: https://leadingpowerfulconversations.com/image-sitemap.xml
