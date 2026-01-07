@@ -417,6 +417,63 @@ a[href*="amazon"] img {
   }
 }
 
+/* ==========================================================================
+   Content with Image Layouts - Seven Principles and similar sections
+   ========================================================================== */
+
+/* Seven Principles section responsive layout */
+.principles-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.principles-section picture {
+  flex-shrink: 0;
+  max-width: 100%;
+  order: 1;
+}
+
+.principles-section ol {
+  flex: 1;
+  min-width: 0;
+  order: 2;
+}
+
+/* Tablet and up - Side by side layout */
+@media (min-width: 768px) {
+  .principles-section {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-8);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .principles-section picture {
+    flex: 0 0 300px;
+    max-width: 400px;
+    order: 1;
+  }
+
+  .principles-section ol {
+    flex: 1;
+    order: 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .principles-section {
+    gap: var(--space-10);
+  }
+
+  .principles-section picture {
+    flex: 0 0 350px;
+    max-width: 450px;
+  }
+}
+
 /* Large Desktop - 1440px and up */
 @media (min-width: 1440px) {
   main {

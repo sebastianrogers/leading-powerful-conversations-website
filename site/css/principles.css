@@ -1,0 +1,88 @@
+/* ==========================================================================
+   7 Principles Section Layout
+   ========================================================================== */
+
+.principles-section {
+    display: inline;
+  margin: 4rem 0; /* 64px equivalent to var(--space-16) */
+  width: 100%;
+}
+
+.principles-section h2 {
+  text-align: center;
+  margin-bottom: 3rem; /* 48px equivalent to var(--space-12) */
+  width: 100%; /* Ensure H2 is full width */
+  max-width: none; /* Override any inherited max-width */
+}
+
+.principles-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Constrain only the content, not the title */
+  margin: 0 auto;
+  padding: 0 1rem; /* Add some padding for mobile */
+}
+
+.principles-image {
+  flex-shrink: 0;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 3rem; /* 48px spacing below image on mobile */
+}
+
+.principles-image img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem; /* 8px equivalent to var(--space-2) */
+  display: block;
+}
+
+.principles-list {
+  flex: 1;
+  width: 100%;
+  margin: 0;
+  padding-left: 1.5rem; /* Standard ordered list indentation */
+}
+
+.principles-list li {
+  margin-bottom: 1rem; /* 16px equivalent to var(--space-4) */
+  line-height: 1.6;
+}
+
+/* Side by side layout on larger screens */
+@media (min-width: 768px) {
+  .principles-content {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 4rem; /* 64px spacing between image and list */
+    padding: 0 2rem; /* Increase padding on larger screens */
+  }
+
+  .principles-image {
+    flex: 0 0 300px;
+    width: 300px;
+    max-width: 400px;
+    margin-bottom: 0; /* Remove bottom margin when side by side */
+  }
+
+  .principles-list {
+    flex: 1;
+    padding-left: 2rem; /* Adjust padding when side by side */
+    min-width: 0; /* Allow text to wrap properly */
+  }
+}
+
+@media (min-width: 1024px) {
+  .principles-image {
+    flex: 0 0 350px;
+    width: 350px;
+    max-width: 450px;
+  }
+
+  .principles-list {
+    padding-left: 2.5rem;
+  }
+}
