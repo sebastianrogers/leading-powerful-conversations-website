@@ -447,15 +447,15 @@
   .framework-step {
     padding: 1.5rem;
   }
-  
+
   .framework-step h3 {
     font-size: var(--font-size-lg);
   }
-  
+
   .framework-step p {
     font-size: var(--font-size-sm);
   }
-  
+
   .framework-arrows {
     display: none; /* Hide arrows on mobile for simpler interface */
   }
@@ -483,12 +483,12 @@
   .framework-step {
     padding: 1rem;
   }
-  
+
   .framework-step picture {
     margin: 1rem 0;
     max-width: 250px;
   }
-  
+
   .framework-nav .nav-dot {
     width: 10px;
     height: 10px;

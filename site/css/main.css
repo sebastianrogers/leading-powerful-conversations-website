@@ -6,29 +6,29 @@
 /* Import CSS modules in the correct order */
 
 /* 1. Variables and Design System Foundation */
-@import url('./variables.css');
+@import url("./variables.css");
 
 /* 2. Base Styles and Typography */
-@import url('./base.css');
+@import url("./base.css");
 
 /* 3. Layout Components */
-@import url('./layout.css');
+@import url("./layout.css");
 
 /* 4. Interactive Components */
-@import url('./components.css');
+@import url("./components.css");
 
 /* 5. Accessibility Features */
-@import url('./accessibility.css');
+@import url("./accessibility.css");
 
 /* 6. Responsive Design */
-@import url('./responsive.css');
+@import url("./responsive.css");
 
 /* 7. Specialized Components */
-@import url('./carousels.css');
-@import url('./error.css');
+@import url("./carousels.css");
+@import url("./error.css");
 
 /* 8. Print Styles (loaded last) */
-@import url('./print.css');
+@import url("./print.css");
 
 /* ==========================================================================
    Architecture Notes:
