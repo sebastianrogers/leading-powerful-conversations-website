@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   workflow_dispatch:
 
 permissions:
@@ -23,22 +23,33 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Verify site directory
         run: |
           echo "Contents of ./site directory:"
           ls -la ./site/
           echo "index.html preview:"
           head -20 ./site/index.html
-      
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
-      
+
+      - name: Generate sitemap
+        run: |
+          echo "Generating dynamic sitemap.xml..."
+          # Set the base URL for GitHub Pages (construct from repository info)
+          export GITHUB_PAGES_URL="https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+          echo "Using base URL: $GITHUB_PAGES_URL"
+          python3 generate_sitemap.py
+          echo "Sitemap generated successfully"
+          echo "Sitemap contents:"
+          cat site/sitemap.xml
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './site'
-      
+          path: "./site"
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
