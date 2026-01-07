@@ -49,6 +49,11 @@
     <header>
       <nav role="navigation" aria-label="Main navigation">
         <h1>Leading Powerful Conversations</h1>
+        <button class="nav-toggle" aria-label="Toggle mobile navigation" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <ul role="menubar">
           <li role="none"><a href="index.html" role="menuitem">Home</a></li>
           <li role="none"><a href="bio.html" role="menuitem">Bio</a></li>
@@ -58,12 +63,59 @@
       </nav>
     </header>
 
-    <main id="main-content">
-      <section>
-        <h2>404</h2>
-        <h3>Page Not Found</h3>
-        <p>The page you're looking for doesn't exist or has been moved.</p>
-        <a href="index.html">Return Home</a>
+    <main id="main-content" role="main" aria-labelledby="error-heading">
+      <section class="error-section" aria-label="Page not found error">
+        <div class="error-container">
+          <div class="error-number" aria-hidden="true">404</div>
+          <h2 id="error-heading">Oops! Page Not Found</h2>
+          <p class="error-message">
+            It seems the page you're looking for has wandered off or doesn't exist. Don't worry though – great conversations can still happen from here!
+          </p>
+
+          <div class="error-suggestions" role="region" aria-labelledby="suggestions-heading">
+            <h3 id="suggestions-heading">Here's what you can do:</h3>
+            <ul role="list">
+              <li>
+                <a href="index.html" aria-describedby="home-desc">Return to the homepage</a>
+                <span id="home-desc">and discover powerful conversation techniques</span>
+              </li>
+              <li>
+                <a href="bio.html" aria-describedby="bio-desc">Learn about Stephen Ellis</a>
+                <span id="bio-desc">and his expertise in communication</span>
+              </li>
+              <li>
+                <a href="resources.html" aria-describedby="resources-desc">Explore our resources</a>
+                <span id="resources-desc">for practical conversation tools</span>
+              </li>
+              <li>
+                <a href="contact.html" aria-describedby="contact-desc">Get in touch</a>
+                <span id="contact-desc">if you need help finding what you're looking for</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="error-quote" role="complementary" aria-label="Inspirational quote">
+            <figure>
+              <blockquote cite="Stephen Ellis">
+                <p>"Every conversation is an opportunity to connect and grow"</p>
+              </blockquote>
+              <figcaption>
+                <cite>– Stephen Ellis</cite>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="error-actions" role="navigation" aria-label="Quick actions">
+            <a href="index.html" class="btn-primary" aria-describedby="home-action-desc">
+              <span>Go Home</span>
+              <span id="home-action-desc" class="sr-only">Return to the main page</span>
+            </a>
+            <a href="contact.html" class="btn-secondary" aria-describedby="contact-action-desc">
+              <span>Contact Us</span>
+              <span id="contact-action-desc" class="sr-only">Get help or report an issue</span>
+            </a>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -77,5 +129,47 @@
         <p>Book content and materials: All rights reserved. Unauthorized reproduction prohibited.</p>
       </div>
     </footer>
+
+    <script>
+      // Mobile navigation functionality
+      document.addEventListener("DOMContentLoaded", function () {
+        const navToggle = document.querySelector(".nav-toggle");
+        const navMenu = document.querySelector('nav ul[role="menubar"]');
+
+        if (navToggle && navMenu) {
+          navToggle.addEventListener("click", function () {
+            const isExpanded = navToggle.getAttribute("aria-expanded") === "true";
+
+            navToggle.setAttribute("aria-expanded", !isExpanded);
+            navToggle.classList.toggle("active");
+            navMenu.classList.toggle("active");
+
+            document.body.style.overflow = !isExpanded ? "hidden" : "auto";
+          });
+
+          // Close menu when clicking on a link
+          const navLinks = navMenu.querySelectorAll("a");
+          navLinks.forEach(function (link) {
+            link.addEventListener("click", function () {
+              navToggle.setAttribute("aria-expanded", "false");
+              navToggle.classList.remove("active");
+              navMenu.classList.remove("active");
+              document.body.style.overflow = "auto";
+            });
+          });
+
+          // Close menu on escape key
+          document.addEventListener("keydown", function (e) {
+            if (e.key === "Escape" && navMenu.classList.contains("active")) {
+              navToggle.setAttribute("aria-expanded", "false");
+              navToggle.classList.remove("active");
+              navMenu.classList.remove("active");
+              document.body.style.overflow = "auto";
+              navToggle.focus();
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
