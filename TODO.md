@@ -2,7 +2,6 @@
 
 > **For AI Assistants**: See `AGENTS.md` for project structure, file locations, and development context.
 
-
 ## 🔧 Development Workflow
 
 - [ ] Set up development/staging environment
